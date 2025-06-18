@@ -22,11 +22,11 @@ def ma_hoa_vigenere(van_ban, khoa):
     return "".join(ma_hoa_van_ban)
 
 # Dữ liệu đầu vào
-van_ban_de_ma_hoa = "NGUYENTIENTRUNG"
+ban_ro = "NGUYENTIENTRUNG"
 khoa = "CHUYENGIA"
 
 # Gọi hàm để thực hiện mã hóa
-ma_hoa_van_ban = ma_hoa_vigenere(van_ban_de_ma_hoa, khoa)
+ma_hoa_van_ban = ma_hoa_vigenere(ban_ro, khoa)
 
 # Kết quả 
 print(f"Văn bản mã hóa: {ma_hoa_van_ban}")
