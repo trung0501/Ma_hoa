@@ -21,9 +21,12 @@ def ma_hoa_vigenere(van_ban, khoa):
         ma_hoa_van_ban.append(ma_hoa_char)
     return "".join(ma_hoa_van_ban)
 
-# Example usage
+# Dữ liệu đầu vào
 van_ban_de_ma_hoa = "NGUYENTIENTRUNG"
 khoa = "CHUYENGIA"
 
+# Gọi hàm để thực hiện mã hóa
 ma_hoa_van_ban = ma_hoa_vigenere(van_ban_de_ma_hoa, khoa)
+
+# Kết quả 
 print(f"Văn bản mã hóa: {ma_hoa_van_ban}")
