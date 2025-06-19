@@ -1,7 +1,7 @@
 # Hàm thực hiện mã hóa Caesar
-def ma_hoa_caesar(chuoi_van_ban, khoa):
+def ma_hoa_caesar(ban_ro, khoa):
     ket_qua = ""
-    for ky_tu in chuoi_van_ban:
+    for ky_tu in ban_ro:
         # Kiểm tra nếu là chữ cái in hoa
         if ky_tu.isalpha() and ky_tu.isupper():
             # Dịch chuyển ký tự theo khóa, đảm bảo quay vòng trong 26 chữ cái
@@ -14,11 +14,11 @@ def ma_hoa_caesar(chuoi_van_ban, khoa):
     return ket_qua
 
 # Dữ liệu đầu vào
-chuoi_goc = "NGUYENTIENTRUNG"
+ban_ro = "NGUYENTIENTRUNG"
 khoa = 5
 
 # Gọi hàm để thực hiện mã hóa
-chuoi_da_ma_hoa = ma_hoa_caesar(chuoi_goc, khoa)
+chuoi_da_ma_hoa = ma_hoa_caesar(ban_ro, khoa)
 
-# In kết quả
+# kết quả
 print("Chuỗi sau khi mã hóa:", chuoi_da_ma_hoa)
