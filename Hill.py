@@ -6,3 +6,14 @@ def chia_khoi_ban_ro(ban_ro):
         ban_ro += 'X'
     khoi = [ban_ro[i:i+3] for i in range(0, len(ban_ro), 3)]
     return khoi
+
+def khoi_sang_vector(khoi):
+    return [[ord(c) - 65] for c in khoi]
+
+def ma_hoa_khoi(vector, ma_tran_khoa):
+    vector_ma_hoa = [[0] for _ in range(3)]
+    for i in range(3):
+        for j in range(3):
+            vector_ma_hoa[i][0] += ma_tran_khoa[i][j] * vector[j][0]
+        vector_ma_hoa[i][0] %= 26
+    return vector_ma_hoa
