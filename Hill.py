@@ -36,3 +36,13 @@ def ma_hoa_hill(ban_ro, khoa):
         ban_ma += ''.join(chr(giatri[0] + 65) for giatri in vector_ma_hoa)
 
     return ban_ma
+
+# Dữ liệu đầu vào
+ban_ro = "NGUYENTIENTRUNG"
+khoa = "TOTNGHIEP"
+
+# Gọi hàm để thực hiện mã hóa
+ban_ma = ma_hoa_hill(ban_ro, khoa)
+
+# Kết quả 
+print("Bản mã:", ban_ma)
