@@ -25,3 +25,14 @@ def ma_hoa_hill(ban_ro, khoa):
 
     if len(khoa) != 9:
         raise ValueError("Khóa phải có đúng 9 ký tự.")
+    
+    ma_tran_khoa = tao_ma_tran_khoa(khoa)
+    cac_khoi_ban_ro = chia_khoi_ban_ro(ban_ro)
+
+    ban_ma = ''
+    for khoi in cac_khoi_ban_ro:
+        vector = khoi_sang_vector(khoi)
+        vector_ma_hoa = ma_hoa_khoi(vector, ma_tran_khoa)
+        ban_ma += ''.join(chr(giatri[0] + 65) for giatri in vector_ma_hoa)
+
+    return ban_ma
