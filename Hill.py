@@ -17,3 +17,11 @@ def ma_hoa_khoi(vector, ma_tran_khoa):
             vector_ma_hoa[i][0] += ma_tran_khoa[i][j] * vector[j][0]
         vector_ma_hoa[i][0] %= 26
     return vector_ma_hoa
+
+def ma_hoa_hill(ban_ro, khoa):
+    # Hàm chính để mã hóa theo Hill Cipher
+    khoa = khoa.upper()
+    ban_ro = ban_ro.upper()
+
+    if len(khoa) != 9:
+        raise ValueError("Khóa phải có đúng 9 ký tự.")
