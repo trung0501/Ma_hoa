@@ -3,16 +3,18 @@ def tao_ma_tran_khoa(khoa):
     return [[ord(khoa[i * 3 + j]) - 65 for j in range(3)] for i in range(3)]
 
 def chia_khoi_ban_ro(ban_ro):
-    # Divide the copy into 3 characters, add 'x' if missing (chia bản sao thành 3 kí tự, thêm 'x' nếu thiếu)
+    # Divide the copy into 3 characters, add 'x' if missing (chia bản sao thành 3 ký tự, thêm 'x' nếu thiếu)
     while len(ban_ro) % 3 != 0:
         ban_ro += 'X'
     khoi = [ban_ro[i:i+3] for i in range(0, len(ban_ro), 3)]
     return khoi
 
 def khoi_sang_vector(khoi):
+    # Convert block 3 characters into 3x1 column vector (chuyển khối 3 ký tự thành vector cột 3*1)
     return [[ord(c) - 65] for c in khoi]
 
 def ma_hoa_khoi(vector, ma_tran_khoa):
+    # Multiply key matrix by vector (nhân ma trận khóa với vector)
     vector_ma_hoa = [[0] for _ in range(3)]
     for i in range(3):
         for j in range(3):
