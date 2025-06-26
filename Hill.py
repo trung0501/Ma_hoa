@@ -1,7 +1,9 @@
 def tao_ma_tran_khoa(khoa):
+    # Create a 3*3 matrix from the lock string (tạo ma trận 3*3 từ chuỗi khóa)
     return [[ord(khoa[i * 3 + j]) - 65 for j in range(3)] for i in range(3)]
 
 def chia_khoi_ban_ro(ban_ro):
+    # Divide the copy into 3 characters, add 'x' if missing (chia bản sao thành 3 kí tự, thêm 'x' nếu thiếu)
     while len(ban_ro) % 3 != 0:
         ban_ro += 'X'
     khoi = [ban_ro[i:i+3] for i in range(0, len(ban_ro), 3)]
