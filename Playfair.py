@@ -31,20 +31,25 @@ def tim_vi_tri(bang_khoa, a, b):
 def chuan_hoa_van_ban(van_ban):
     # Chuyển về chữ thường, bỏ khoảng trắng, thay 'j' thành 'i'
     van_ban = van_ban.lower().replace(" ", "").replace("j", "i")
-    # Nếu độ dài lẻ → thêm 'z' vào cuối để đủ cặp ký tự
+    # Nếu độ dài lẻ thì thêm 'z' vào cuối để đủ cặp ký tự
     return van_ban if len(van_ban) % 2 == 0 else van_ban + 'z'
 
 def ma_hoa(van_ban, bang_khoa):
-    danh_sach_ky_tu = list(van_ban)
+    danh_sach_ky_tu = list(van_ban)     # Chuyển chuỗi thành danh sách để dễ thay đổi
+    # Duyệt từng cặp ký tự (bước nhảy là 2)
     for i in range(0, len(danh_sach_ky_tu), 2):
+        # Tìm vị trí hàng, cột của 2 ký tự trong bảng mã
         dong1, cot1, dong2, cot2 = tim_vi_tri(bang_khoa, danh_sach_ky_tu[i], danh_sach_ky_tu[i+1])
         if dong1 == dong2:
+            # Nếu cùng hàng thì chọn ký tự bên phải (vòng tròn sang phải)
             danh_sach_ky_tu[i] = bang_khoa[dong1][(cot1 + 1) % 5]
             danh_sach_ky_tu[i+1] = bang_khoa[dong2][(cot2 + 1) % 5]
         elif cot1 == cot2:
+            # Nếu cùng cột thì chọn ký tự bên dưới (vòng tròn xuống dưới)
             danh_sach_ky_tu[i] = bang_khoa[(dong1 + 1) % 5][cot1]
             danh_sach_ky_tu[i+1] = bang_khoa[(dong2 + 1) % 5][cot2]
         else:
+            # Nếu khác hàng và cột thì đổi chéo theo hình chữ nhật
             danh_sach_ky_tu[i] = bang_khoa[dong1][cot2]
             danh_sach_ky_tu[i+1] = bang_khoa[dong2][cot1]
     return ''.join(danh_sach_ky_tu)
