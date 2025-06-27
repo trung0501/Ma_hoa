@@ -1,8 +1,10 @@
 def tao_bang_khoa(khoa):
+    # Chuyển khóa thành chữ thường, bỏ khoảng trắng và thay 'j' thành 'i'
     khoa = khoa.lower().replace(" ", "").replace("j", "i")
-    da_dung = set()
-    bang_khoa = []
+    da_dung = set()     # Tập hợp dùng để lưu các ký tự đã thêm vào bảng
+    bang_khoa = []      # Danh sách lưu bảng mã 5x5
 
+    # Duyệt qua từng ký tự trong khóa + bảng chữ cái a–z
     for ky_tu in khoa + ''.join(chr(i) for i in range(97, 123)):
         if ky_tu == 'j':
             continue
