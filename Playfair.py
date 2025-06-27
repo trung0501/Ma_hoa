@@ -17,7 +17,6 @@ def tao_bang_khoa(khoa):
     # Trả về bảng mã dưới dạng ma trận 5x5 (5 hàng, mỗi hàng 5 ký tự)
     return [bang_khoa[i*5:(i+1)*5] for i in range(5)]
 
-# Hàm tìm vị trí của 2 ký tự trong bảng mã
 def tim_vi_tri(bang_khoa, a, b):
     vi_tri = []     # Danh sách lưu tọa độ hàng, cột của a và b
     for ky_tu in (a, b):
@@ -27,10 +26,12 @@ def tim_vi_tri(bang_khoa, a, b):
             for j in range(5):
                 if bang_khoa[i][j] == ky_tu:
                     vi_tri.extend([i, j])
-    return vi_tri     # Thay 'j' bằng 'i' theo quy tắc
+    return vi_tri     # Trả về: [hàng_a, cột_a, hàng_b, cột_b]    
 
 def chuan_hoa_van_ban(van_ban):
+    # Chuyển về chữ thường, bỏ khoảng trắng, thay 'j' thành 'i'
     van_ban = van_ban.lower().replace(" ", "").replace("j", "i")
+    # Nếu độ dài lẻ → thêm 'z' vào cuối để đủ cặp ký tự
     return van_ban if len(van_ban) % 2 == 0 else van_ban + 'z'
 
 def ma_hoa(van_ban, bang_khoa):
