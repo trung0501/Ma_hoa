@@ -17,16 +17,17 @@ def tao_bang_khoa(khoa):
     # Trả về bảng mã dưới dạng ma trận 5x5 (5 hàng, mỗi hàng 5 ký tự)
     return [bang_khoa[i*5:(i+1)*5] for i in range(5)]
 
+# Hàm tìm vị trí của 2 ký tự trong bảng mã
 def tim_vi_tri(bang_khoa, a, b):
-    vi_tri = []
+    vi_tri = []     # Danh sách lưu tọa độ hàng, cột của a và b
     for ky_tu in (a, b):
-        if ky_tu == 'j':
+        if ky_tu == 'j':     # Thay 'j' bằng 'i' theo quy tắc
             ky_tu = 'i'
         for i in range(5):
             for j in range(5):
                 if bang_khoa[i][j] == ky_tu:
                     vi_tri.extend([i, j])
-    return vi_tri
+    return vi_tri     # Thay 'j' bằng 'i' theo quy tắc
 
 def chuan_hoa_van_ban(van_ban):
     van_ban = van_ban.lower().replace(" ", "").replace("j", "i")
