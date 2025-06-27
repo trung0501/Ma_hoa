@@ -6,14 +6,15 @@ def tao_bang_khoa(khoa):
 
     # Duyệt qua từng ký tự trong khóa + bảng chữ cái a–z
     for ky_tu in khoa + ''.join(chr(i) for i in range(97, 123)):
-        if ky_tu == 'j':
+        if ky_tu == 'j':     # Bỏ qua 'j' vì đã gộp chung với 'i'
             continue
-        if ky_tu not in da_dung:
+        if ky_tu not in da_dung:     # Nếu ký tự chưa được thêm thì thêm vào bảng
             da_dung.add(ky_tu)
             bang_khoa.append(ky_tu)
-        if len(bang_khoa) == 25:
+        if len(bang_khoa) == 25:     # Đủ 25 ký tự thì dừng lại
             break
-
+   
+    # Trả về bảng mã dưới dạng ma trận 5x5 (5 hàng, mỗi hàng 5 ký tự)
     return [bang_khoa[i*5:(i+1)*5] for i in range(5)]
 
 def tim_vi_tri(bang_khoa, a, b):
